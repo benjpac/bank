@@ -15,8 +15,7 @@ function BankAccount(username, initialDeposit) {
 }
 
 function createAccount(username, initialDeposit) {
-  var newAccount = new BankAccount(username, initialDeposit);
-  accounts[name] = newAccount;
+  accounts[name] = new BankAccount(username, initialDeposit);
   console.log(accounts);
 }
 

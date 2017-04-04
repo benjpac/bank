@@ -13,7 +13,35 @@
   Remember to create a BankAccount constructor and a prototype that includes methods for deposit and withdrawal and any other properties needed. Here is an example wireframe to help you visualize the app: -->
   <body>
     <div class="container">
-      <h1>Welcome to the Epicodus Credit Union!</h1>
+      <h1 id="header">Welcome to the Epicodus Credit Union!</h1>
+      <div class="row">
+        <form id="register">
+          <div class="col-md-6 panel">
+            <h3>Register a new account</h3>
+            <label for="username">Username:</label>
+            <input id="username" type="text"><br>
+            <label for="initialDeposit">Initial Deposit:</label>
+            <input id="initialDeposit" type="text"><br>
+            <button type="submit" class="btn btn-primary">Create Account</button>
+          </div>
+        </form>
+        <form id="accountAction">
+          <div class="col-md-6 panel">
+            <h3>Deposit or withdraw funds</h3>
+            <label for="depositAmount">Deposit Amount:</label>
+            <input id="depositAmount" type="text"><br>
+            <label for="withdrawlAmount">Withdrawl Amount:</label>
+            <input id="withdrawlAmount" type="text"><br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col-md-12 panel">
+          <h3 class="inline">Current Balance:</h3>
+          <h3 id="balance" class="inline">$0.00</h3>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -1,0 +1,27 @@
+.panel {
+  background-color: #DAE8FC;
+  border-style: solid;
+  border-color: #7E9CC9;
+  padding: 10px;
+  margin: 10px;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.btn-primary {
+  margin-top: 5px;
+}
+
+#header {
+  text-align: center;
+}
+
+#balance {
+  margin: 5px;
+  padding: 5px;
+  background-color: white;;
+  border-style: solid;
+  border-color: black;
+}

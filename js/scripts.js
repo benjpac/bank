@@ -9,12 +9,21 @@
 
 //business logic
 function BankAccount(username, initialDeposit) {
-  debugger;
   this.username = username;
   this.balance = initialDeposit;
 }
 
-BankAccount.prototype.accountAction = function(withdrawlAmount, depositAmount) {
+BankAccount.prototype.nameBalance = function() {
+  return this.username + ", your balance is $" + this.balance;
+}
+
+BankAccount.prototype.accountAction = function(depositAmount, withdrawlAmount) {
+  if (!withdrawlAmount) {
+    withdrawlAmount = 0;
+  }
+  if (!depositAmount) {
+    depositAmount = 0;
+  }
   this.balance -= withdrawlAmount;
   this.balance += depositAmount;
   return this.balance;
@@ -24,17 +33,19 @@ BankAccount.prototype.accountAction = function(withdrawlAmount, depositAmount) {
 $(document).ready(function() {
   $("#register").submit(function(event) {
     event.preventDefault();
-    var username = $("#username").val();
-    var initialDeposit = $("#initialDeposit").val();
-    var newAccount = new BankAccount(username, initialDeposit);
     debugger;
-    $("#balance h3").text(newAccount.balance);
-  });
-  $("#accountAction").submit(function(event) {
-    event.preventDefault();
-    var depositAmount = $("#depositAmount").val();
-    var withdrawlAmount = $("#withdrawlAmount").val();
-    newAccount.accountAction(withdrawlAmount, withdrawlAmount);
-
+    var username = $("#username").val();
+    var initialDeposit = parseFloat($("#initialDeposit").val());
+    var newAccount = new BankAccount(username, initialDeposit);
+    $("#balance").show()
+    $("#balance").text(newAccount.nameBalance());
+    $("#accountAction").submit(function(event) {
+      event.preventDefault();
+      var balance = newAccount.balance;
+      var depositAmount = parseFloat($("#depositAmount").val());
+      var withdrawlAmount = parseFloat($("#withdrawlAmount").val());
+      newAccount.accountAction(depositAmount, withdrawlAmount)
+      $("#balance").text(newAccount.nameBalance());
+    });
   });
 });

@@ -5,12 +5,20 @@
   padding: 10px;
 }
 
-.inline {
-  display: inline-block;
-}
-
 .btn-primary {
   margin-top: 5px;
+}
+
+.deposit {
+  display: none;
+}
+
+.withdraw {
+  display: none;
+}
+
+.balance {
+  display: none;
 }
 
 #header {
@@ -18,7 +26,6 @@
 }
 
 #balance {
-  display: none;
   margin: 5px;
   padding: 5px;
   background-color: white;;
